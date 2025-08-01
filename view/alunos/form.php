@@ -32,7 +32,7 @@ include_once(__DIR__ . "/../include/header.php");
         <select name="curso" id="curso">
             <option value="">Selecione</option>
             <?php foreach ($cursoCont->listar() as $curso): ?>
-                <option value="<?= $curso->getId() ?>"> <?= $curso->getNome() ?> - <?= $curso->getTurnoTexto() ?> </option>
+                <option value="<?= $curso->getId() ?>"> <?= $curso?> </option>
             <?php endforeach; ?>
         </select>
     </div>
