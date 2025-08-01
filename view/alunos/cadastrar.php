@@ -23,6 +23,8 @@ if(isset($_POST["nome"]))
 
     $alunoController = new AlunoController();
     $alunoController->cadastrar($aluno);
+
+    header("location: listar.php");
 } 
 
 include_once(__DIR__ . "/form.php");
