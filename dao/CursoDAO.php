@@ -14,7 +14,7 @@ class CursoDAO
 
     public function listar()
     {
-        $sql = "SELECT * FROM cursos";
+        $sql = "SELECT * FROM cursos ORDER BY nome";
         $stm = $this->conexao->prepare($sql);
         $stm->execute();
         $result = $stm->fetchAll();

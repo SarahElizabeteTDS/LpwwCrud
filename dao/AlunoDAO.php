@@ -12,6 +12,13 @@ class AlunoDAO
         $this->conexao = Connection::getConnection();
     }
 
+    public function cadastrar(Aluno $aluno)
+    {
+        $sql = "INSERT INTO alunos (nome, idade, estrangeiro, id_curso) VALUES (?,?,?,?)";
+        $stm = $this->conexao->prepare($sql);
+        return $stm->execute($aluno->getNome(), $aluno->getIdade(), $aluno->getEstrangeiro(), $aluno->getCurso()->getId());
+    }
+
     public function listar()
     {
         $sql = "SELECT a.*, c.nome nome_curso, c.turno turno_curso FROM alunos a JOIN cursos c ON (c.id = a.id_curso)";

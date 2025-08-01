@@ -15,4 +15,9 @@ class AlunoController
     {
         return $this->alunoDao->listar();
     }
+
+    public function cadastrar(Aluno $aluno)
+    {
+        return $this->alunoDao->cadastrar($aluno);
+    }
 }
