@@ -16,7 +16,7 @@ class AlunoDAO
     {
         $sql = "INSERT INTO alunos (nome, idade, estrangeiro, id_curso) VALUES (?,?,?,?)";
         $stm = $this->conexao->prepare($sql);
-        return $stm->execute($aluno->getNome(), $aluno->getIdade(), $aluno->getEstrangeiro(), $aluno->getCurso()->getId());
+        return $stm->execute([$aluno->getNome(), $aluno->getIdade(), $aluno->getEstrangeiro(), $aluno->getCurso()->getId()]);
     }
 
     public function listar()

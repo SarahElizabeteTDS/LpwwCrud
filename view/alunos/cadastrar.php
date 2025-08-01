@@ -1,7 +1,7 @@
 <?php
-require_once(__DIR__ . "../../model/Aluno.php");
-require_once(__DIR__ . "../../controller/AlunoController.php");
-require_once(__DIR__ . "../../model/Curso.php");
+require_once(__DIR__ . "/../../model/Aluno.php");
+require_once(__DIR__ . "/../../controller/AlunoController.php");
+require_once(__DIR__ . "/../../model/Curso.php");
 
 //receber os dados do formulário
 if(isset($_POST["nome"])) 
