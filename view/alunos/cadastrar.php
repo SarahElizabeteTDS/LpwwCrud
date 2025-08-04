@@ -30,6 +30,7 @@ if(isset($_POST["nome"]))
     }else
     {
         $msgErro = implode("<br>", $erros);
+        echo $msgErro;
     }
 
     header("location: listar.php");
