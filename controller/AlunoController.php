@@ -28,6 +28,7 @@ class AlunoController
             array_push($erros, "Erro ao salvar um aluno.");
             array_push($erros, $erro->getMessage());
         }
+
         return $erros;
     }
 }

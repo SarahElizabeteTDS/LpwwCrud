@@ -23,7 +23,7 @@ class AlunoDAO
         } 
         catch(PDOException $e)
         {
-            return "Erro ao salvar o registro.";
+            return $e;
         }
         
     }

@@ -24,7 +24,7 @@ if(isset($_POST["nome"]))
     $alunoController = new AlunoController();
     $erros = $alunoController->cadastrar($aluno);
 
-    if(!$erros)
+    if(! $erros)
     {
         header("location: listar.php");
     }else
@@ -32,8 +32,6 @@ if(isset($_POST["nome"]))
         $msgErro = implode("<br>", $erros);
         echo $msgErro;
     }
-
-    header("location: listar.php");
 } 
 
 include_once(__DIR__ . "/form.php");
