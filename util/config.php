@@ -9,3 +9,7 @@ define("DB_HOST", "localhost");
 define("DB_NAME", "Crud");
 define("DB_USER", "root");
 define("DB_PASSWORD", "bancodedados");
+
+//configurações adicionais
+define("VERBOUSE", true);
+//define("VERBOUSE",  false); Esse não deve aparecer para o usuário final

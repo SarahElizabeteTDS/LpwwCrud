@@ -39,11 +39,17 @@ include_once(__DIR__ . "/../include/header.php");
     <div>
         <button type="submit">Cadastrar</button>
     </div>
+
     <br>
-    <div>
-        <a href="listar.php">Voltar</a>
+    <div style="color:red;">
+        <?=$msgErro?>
     </div>
+    
 </form>
+<br>
+<div>
+    <a href="listar.php">Voltar</a>
+</div>
 
 <?php
 
