@@ -6,10 +6,10 @@ require_once(__DIR__ . "/../../model/Curso.php");
 //receber os dados do formulário
 if(isset($_POST["nome"])) 
 {
-    $nome = $_POST["nome"];
-    $idade = $_POST["idade"];
-    $estrangeiro = $_POST["estrangeiro"];
-    $curso = $_POST["curso"];
+    $nome = trim($_POST["nome"]) ? trim($_POST["nome"]) : NULL;
+    $idade = is_numeric($_POST["idade"]) && $_POST["idade"] > 0 ? $_POST["idade"] : NULL;
+    $estrangeiro = trim($_POST["estrangeiro"]) ? trim($_POST["estrangeiro"]) : NULL;
+    $curso = is_numeric($_POST["curso"]) ? $_POST["curso"] : NULL;
 
     $aluno = new Aluno();
     $aluno->setNome($nome);
@@ -22,7 +22,15 @@ if(isset($_POST["nome"]))
     $aluno->setCurso($cursoObj);
 
     $alunoController = new AlunoController();
-    $alunoController->cadastrar($aluno);
+    $erros = $alunoController->cadastrar($aluno);
+
+    if(!$erros)
+    {
+        header("location: listar.php");
+    }else
+    {
+        $msgErro = implode("<br>", $erros);
+    }
 
     header("location: listar.php");
 } 

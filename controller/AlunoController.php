@@ -19,6 +19,15 @@ class AlunoController
 
     public function cadastrar(Aluno $aluno)
     {
-        return $this->alunoDao->cadastrar($aluno);
+        $erros = array();
+
+        $erro = $this->alunoDao->cadastrar($aluno);
+
+        if($erro)
+        {
+            array_push($erros, "Erro ao salvar um aluno.");
+            array_push($erros, $erro->getMessage());
+        }
+        return $erros;
     }
 }
